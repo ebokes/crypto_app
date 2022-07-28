@@ -5,6 +5,7 @@ import Axios from "axios";
 
 function App() {
   const [coins, setCoins] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     Axios.get(
@@ -16,12 +17,21 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
 
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
   return (
     <div className="coin-app">
       <div className="coin-search">
         <h1 className="coin-text">Search a currency</h1>
         <form>
-          <input type="text" placeholder="Search" className="coin-input" />
+          <input
+            type="text"
+            onChange={handleChange}
+            placeholder="Search"
+            className="coin-input"
+          />
         </form>
       </div>
     </div>
