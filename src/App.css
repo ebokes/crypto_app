@@ -9,12 +9,29 @@
 html {
   font-size: 62.5%;
 }
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 58%;
+  }
+}
 
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #1a1a1c;
   color: #fff;
   font-size: 1.6rem;
+}
+
+.table-container {
+  overflow-x: scroll;
+  max-width: 120rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+table {
+  width: 90rem;
+  margin: 0 auto;
 }
 
 .coin-app {
@@ -44,23 +61,14 @@ body {
   border: none;
   background-image: linear-gradient(
     -225deg,
-    #ac32e4 0%,
-    #7918f2 48%,
-    #4801ff 100%
+    #0c4767 0%,
+    #116592 48%,
+    #0d4c6e 100%
   );
   color: #e2e2e2;
+  outline: none;
 }
 
 .coin-input::placeholder {
   color: #e2e2e2;
-}
-
-.coin-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 86rem;
-  margin-left: 25.4rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 0.1rem solid #d7d7d7;
 }

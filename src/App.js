@@ -2,6 +2,7 @@ import Coin from "./components/Coin";
 import "./App.css";
 import { useEffect, useState } from "react";
 import Axios from "axios";
+import CoinHead from "./components/CoinHead";
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -38,18 +39,27 @@ function App() {
           />
         </form>
       </div>
-      {filteredCoins.map((coin) => (
-        <Coin
-          key={coin.id}
-          name={coin.name}
-          image={coin.image}
-          price={coin.current_price}
-          symbol={coin.symbol}
-          marketcap={coin.market_cap}
-          priceChange={coin.price_change_percentage_24h}
-          volume={coin.total_volume}
-        />
-      ))}
+      <div className="table-container">
+        <table>
+          <thead className="coin-heading">
+            <CoinHead />
+          </thead>
+          <tbody>
+            {filteredCoins.map((coin) => (
+              <Coin
+                key={coin.id}
+                name={coin.name}
+                image={coin.image}
+                price={coin.current_price}
+                symbol={coin.symbol}
+                marketcap={coin.market_cap}
+                priceChange={coin.price_change_percentage_24h}
+                volume={coin.total_volume}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
