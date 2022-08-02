@@ -17,9 +17,17 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #1a1a1c;
-  color: #fff;
   font-size: 1.6rem;
+}
+
+body #light {
+  background-color: #fff;
+  color: #090909;
+}
+
+body #dark {
+  background-color: #1a1a1c;
+  color: #eaeaea;
 }
 
 .table-container {
@@ -37,8 +45,22 @@ table {
 .coin-app {
   display: flex;
   flex-direction: column;
-  margin-top: 6.4rem;
+  padding-top: 6.4rem;
   color: #fff;
+}
+
+.coin-app > span {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 3rem 4rem 3rem;
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.switch {
+  display: inline-flex;
+  column-gap: 0.5rem;
 }
 
 .coin-search {
